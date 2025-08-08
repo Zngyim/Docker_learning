@@ -2,6 +2,9 @@
 
 ***以下docker命令均要在sudo下执行***
 
+***可以将docker转变为non-root user，详见[官方教程](https://docs.docker.com/engine/install/linux-postinstall/)***
+
+
 [爬爬虾教程](https://www.bilibili.com/video/BV1THKyzBER6/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=322f1eb47e35d454d075998e82c3b3ce)
 
 ## core concepts
