@@ -7,6 +7,8 @@
 
 [爬爬虾教程](https://www.bilibili.com/video/BV1THKyzBER6/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=322f1eb47e35d454d075998e82c3b3ce)
 
+[Docker安装教程](https://blog.csdn.net/m0_74969398/article/details/145929951)
+
 ## core concepts
 1. 容器
 2. 镜像，创造容器，任何人都可以创造镜像并且放到下述的仓库中
@@ -128,6 +130,16 @@ docker volume inspect <volume_name>-----查看挂载卷的具体信息，包括�
 
 ==其实我并不知道有哪些文件夹要进行挂载，这方面知识后续再说==
 
+
+#### ros_melodic的容器创建
+
+直接复制了前人创建容器的方式，详见[CSDN](https://blog.csdn.net/wxl5018/article/details/134183941)
+```
+docker run -it -v$(pwd):/data --device=/dev/dri --group-add video --volume=/tmp/.X11-unix:/tmp/.X11-unix --env="DISPLAY=$DISPLAY"  --name=catkinDocker MyDocker:latest /bin/bash
+```
+
+关于创建容器时的命令，B站有一篇很好的[文章](https://www.bilibili.com/opus/830115082659692564?spm_id_from=333.1387.0.0)
+
 ### DockerFile
 
 > DockerFile文件为你在别的镜像的基础上创建自己的镜像提供了途径，如果将你创建的镜像上传到docker的仓库中，那么别人就可以直接下载你制作的镜像进行使用
@@ -169,6 +181,10 @@ docker push <image_name>
 
 由于一些原因未能上传成功，但这不是当前工作重点，于是不再深入研究
 ```
+
+### 进入容器
+
+`docker exec -it <container_name> bash`进入容器系统的命令行。
 
 
 
